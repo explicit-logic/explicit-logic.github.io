@@ -1,5 +1,6 @@
 import { Navbar } from "~/components/Navbar";
 import { Welcome } from "~/components/Welcome";
+import { Home } from "~/components/Home";
 import { Dock } from "~/components/Dock";
 import { ContactWindow } from "~/windows/Contact";
 import { ResumeWindow } from "~/windows/Resume";
@@ -27,6 +28,8 @@ const App = () => {
       <TerminalWindow />
       <TextWindow />
       <ImageWindow />
+
+      <Home />
     </main>
   );
 };
