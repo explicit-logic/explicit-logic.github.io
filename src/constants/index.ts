@@ -1,3 +1,4 @@
+import type { Location } from "~/types/location";
 import type { Window } from "~/types/window";
 
 const navLinks = [
@@ -385,7 +386,7 @@ const WORK_LOCATION = {
   ],
 };
 
-const ABOUT_LOCATION = {
+const ABOUT_LOCATION: Location = {
   id: 2,
   type: "about",
   name: "About me",
@@ -438,7 +439,7 @@ const ABOUT_LOCATION = {
   ],
 };
 
-const RESUME_LOCATION = {
+const RESUME_LOCATION: Location = {
   id: 3,
   type: "resume",
   name: "Resume",
@@ -457,7 +458,7 @@ const RESUME_LOCATION = {
   ],
 };
 
-const TRASH_LOCATION = {
+const TRASH_LOCATION: Location = {
   id: 4,
   type: "trash",
   name: "Trash",
@@ -490,7 +491,7 @@ export const locations = {
   about: ABOUT_LOCATION,
   resume: RESUME_LOCATION,
   trash: TRASH_LOCATION,
-};
+} as const;
 
 const INITIAL_Z_INDEX = 1000;
 
