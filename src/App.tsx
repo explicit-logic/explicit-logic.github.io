@@ -6,6 +6,7 @@ import { TerminalWindow } from "~/windows/Terminal";
 import { SafariWindow } from "~/windows/Safari";
 import { FinderWindow } from "~/windows/Finder";
 import { TextWindow } from "~/windows/Text";
+import { ImageWindow } from "~/windows/Image";
 import { Draggable } from "gsap/Draggable";
 import gsap from "gsap";
 
@@ -23,6 +24,7 @@ const App = () => {
       <SafariWindow />
       <TerminalWindow />
       <TextWindow />
+      <ImageWindow />
     </main>
   );
 };
