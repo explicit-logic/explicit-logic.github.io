@@ -12,14 +12,23 @@ export const Contact = () => {
 
       <div className="p-5 space-y-5">
         <img
-          src="images/adrian.jpg"
+          src="images/avatar.jpg"
           alt="Bohdan"
           className="w-20 rounded-full"
         />
         <h3>Let's Connect</h3>
         <p>Got an idea? Let's make it real!</p>
         <p>Send me a message</p>
-        <p>explicit.logic@outlook.com</p>
+        <p>
+          <a
+            href="mailto:explicit.logic@outlook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:no-underline"
+          >
+            explicit.logic@outlook.com
+          </a>
+        </p>
         <ul>
           {socials.map((social) => (
             <li key={social.id} style={{ backgroundColor: social.bg }}>
