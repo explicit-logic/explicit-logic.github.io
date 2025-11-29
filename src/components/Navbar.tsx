@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { navIcons, navLinks } from "~/constants";
+import { navIcons, navLinks, TIMEZONE } from "~/constants";
 import { useWindowStore } from "~/store/window";
 
 export const Navbar = () => {
@@ -28,7 +28,7 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        <time>{dayjs().format("ddd MMM D h:mm A")}</time>
+        <time>{dayjs().tz(TIMEZONE).format("ddd MMM D h:mm A")}</time>
       </div>
     </nav>
   );

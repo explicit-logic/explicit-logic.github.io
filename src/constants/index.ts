@@ -1,6 +1,8 @@
 import type { Location } from "~/types/location";
 import type { Window } from "~/types/window";
 
+export const TIMEZONE = "Europe/Prague";
+
 const navLinks = [
   {
     id: 1,
@@ -104,28 +106,28 @@ const blogPosts = [
 
 const techStack = [
   {
-    category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    category: "Languages",
+    items: ["JavaScript", "Node.js", "TypeScript", "PHP", "Rust", "Apex"],
   },
   {
-    category: "Mobile",
-    items: ["React Native", "Expo"],
+    category: "Frameworks",
+    items: ["Fastify", "React.js", "Tanstack", "Next.js", "NestJS", "Laravel", "Symfony", "Wordpress"],
+  },
+  {
+    category: "Database",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "SQLite", "Supabase"],
+  },
+  {
+    category: "DevOps",
+    items: ["Cloudflare", "Docker", "Kubernetes", "AWS", "Salesforce"],
   },
   {
     category: "Styling",
     items: ["Tailwind CSS", "Sass", "CSS"],
   },
   {
-    category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
-  },
-  {
-    category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
-  },
-  {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Cursor", "Git", "GitHub", "Docker"],
   },
 ];
 
@@ -191,19 +193,15 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: "/images/me-1.jpg",
   },
   {
     id: 2,
-    img: "/images/gal2.png",
+    img: "/images/me-2.jpg",
   },
   {
     id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
+    img: "/images/me-3.jpg",
   },
 ];
 

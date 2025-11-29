@@ -91,7 +91,10 @@ export const Welcome = () => {
   return (
     <section id="welcome">
       <p ref={subtitleRef}>
-        {renderText("Hey, I'm Bohdan! Welcome to my", "text-3xl font-georama")}
+        {renderText(
+          "Hey, my name is Bohdan! Welcome to my",
+          "text-3xl font-georama"
+        )}
       </p>
       <h1 ref={titleRef} className="mt-7">
         {renderText("portfolio", "text-9xl italic font-georama")}

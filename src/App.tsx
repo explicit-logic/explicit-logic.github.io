@@ -32,6 +32,15 @@ const App = () => {
       <PhotosWindow />
 
       <Home />
+
+      <a
+        href="https://unsplash.com/photos/silhouette-of-mountains-during-nigh-time-photography-v7daTKlZzaw"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute bottom-5 right-5 text-white/50 text-xs hover:text-white transition-colors z-0"
+      >
+        @Unsplash - Daniel Leone
+      </a>
     </main>
   );
 };
