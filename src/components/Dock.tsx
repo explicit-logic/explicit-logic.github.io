@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Tooltip } from "react-tooltip";
-import { DOCK_APPS, type DockApp } from "~/constants/dock";
+import { DOCK_APPS, DIVIDER_ID, type DockApp } from "~/constants/dock";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useWindowStore } from "~/store/window";
@@ -81,23 +81,29 @@ export const Dock = () => {
       <div ref={dockRef} className="dock-container">
         {DOCK_APPS.map((app) => (
           <div key={app.id} className="relative flex justify-center">
-            <button
-              type="button"
-              className="dock-icon"
-              aria-label={app.name}
-              data-tooltip-id="dock-tooltip"
-              data-tooltip-content={app.name}
-              data-tooltip-delay-show={150}
-              disabled={!app.canOpen}
-              onClick={() => toggleApp(app)}
-            >
-              <img
-                src={`/images/${app.icon}`}
-                alt={app.name}
-                loading="lazy"
-                className={app.canOpen ? "" : "opacity-60"}
-              />
-            </button>
+            {app.id === DIVIDER_ID ? (
+              <div className="w-px h-12 3xl:h-16 bg-white/30 self-center mx-1" />
+            ) : (
+              <button
+                type="button"
+                className="dock-icon"
+                aria-label={app.name}
+                data-tooltip-id="dock-tooltip"
+                data-tooltip-content={app.name}
+                data-tooltip-delay-show={150}
+                disabled={!app.canOpen}
+                onClick={() => toggleApp(app)}
+              >
+                <img
+                  src={`/images/${app.icon}`}
+                  alt={app.name}
+                  loading="lazy"
+                  className={`${app.canOpen ? "" : "opacity-60"} ${
+                    app.icon.includes("apps") ? "w-12" : "w-16"
+                  }`}
+                />
+              </button>
+            )}
           </div>
         ))}
         <Tooltip id="dock-tooltip" place="top" className="tooltip" />
