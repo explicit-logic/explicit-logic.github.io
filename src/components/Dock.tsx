@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Tooltip } from "react-tooltip";
-import { dockApps } from "~/constants";
+import { DOCK_APPS, type DockApp } from "~/constants/dock";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useWindowStore } from "~/store/window";
@@ -8,7 +8,7 @@ import { useWindowStore } from "~/store/window";
 export const Dock = () => {
   const { openWindow, closeWindow, windows } = useWindowStore();
   const dockRef = useRef<HTMLDivElement>(null);
-  const toggleApp = (app: (typeof dockApps)[number]) => {
+  const toggleApp = (app: DockApp) => {
     if (!app.canOpen) return;
 
     const win = windows[app.id];
@@ -79,7 +79,7 @@ export const Dock = () => {
   return (
     <section id="dock">
       <div ref={dockRef} className="dock-container">
-        {dockApps.map((app) => (
+        {DOCK_APPS.map((app) => (
           <div key={app.id} className="relative flex justify-center">
             <button
               type="button"

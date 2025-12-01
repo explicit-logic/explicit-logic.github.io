@@ -1,36 +1,33 @@
-import { locations } from "~/constants";
+import { APPS, type App } from "~/constants/desktop";
 import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/Draggable";
 import { useWindowStore } from "~/store/window";
 import { useLocationStore } from "~/store/location";
-import type { LocationChild } from "~/types/location";
-
-const projects = locations.work.children ?? [];
 
 export const Home = () => {
   const { setActiveLocation } = useLocationStore();
   const { openWindow } = useWindowStore();
 
-  const handleOpenProjectFinder = (project: LocationChild) => {
-    setActiveLocation(project);
-    openWindow("finder", project);
+  const handleOpenProjectFinder = (app: App) => {
+    setActiveLocation(app);
+    openWindow("finder", app);
   };
 
   useGSAP(() => {
-    Draggable.create(".folder");
+    Draggable.create(".app");
   }, []);
 
   return (
     <section id="home">
       <ul>
-        {projects.map((project) => (
+        {APPS.map((app) => (
           <li
-            key={project.id}
-            className={`group folder ${project.windowPosition}`}
-            onClick={() => handleOpenProjectFinder(project)}
+            key={app.id}
+            className={`group app ${app.position}`}
+            onClick={() => handleOpenProjectFinder(app)}
           >
-            <img src="/images/folder.png" alt={project.name} />
-            <p>{project.name}</p>
+            <img src={app.icon} alt={app.name} className="w-16" />
+            <p>{app.name}</p>
           </li>
         ))}
       </ul>
