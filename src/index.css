@@ -382,10 +382,28 @@ body {
     height: 800px;
 
     #window-header {
+      @apply grid grid-cols-[auto_1fr_auto] items-center;
+      
       p {
-        @apply font-bold text-[#5f6266];
+        @apply font-bold text-[#5f6266] text-center;
       }
     }
+  }
+
+  /* Modal animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.2s ease-out;
   }
 
   #home {
