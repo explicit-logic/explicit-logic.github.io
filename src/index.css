@@ -376,6 +376,18 @@ body {
     }
   }
 
+  #wallpapers {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-3xl overflow-hidden;
+    width: 390px;
+    height: 800px;
+
+    #window-header {
+      p {
+        @apply font-bold text-[#5f6266];
+      }
+    }
+  }
+
   #home {
     @apply relative z-0 max-sm:hidden;
 

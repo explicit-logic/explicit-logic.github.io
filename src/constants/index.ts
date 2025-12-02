@@ -456,6 +456,7 @@ const WINDOW_CONFIG: Record<string, Window>  = {
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  wallpapers: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 } as const;
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

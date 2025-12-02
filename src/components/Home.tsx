@@ -1,16 +1,22 @@
 import { APPS, type App } from "~/constants/desktop";
+import { LINK_ID } from "~/constants/common";
 import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/Draggable";
 import { useWindowStore } from "~/store/window";
-import { useLocationStore } from "~/store/location";
 
 export const Home = () => {
-  const { setActiveLocation } = useLocationStore();
-  const { openWindow } = useWindowStore();
+  const { openWindow, closeWindow, windows } = useWindowStore();
 
-  const handleOpenProjectFinder = (app: App) => {
-    setActiveLocation(app);
-    openWindow("finder", app);
+  const toggleApp = (app: App) => {
+    const win = windows[app.id];
+
+    if (!win) return;
+
+    if (win.isOpen) {
+      closeWindow(app.id);
+    } else {
+      openWindow(app.id);
+    }
   };
 
   useGSAP(() => {
@@ -20,16 +26,25 @@ export const Home = () => {
   return (
     <section id="home">
       <ul>
-        {APPS.map((app) => (
-          <li
-            key={app.id}
-            className={`group app ${app.position}`}
-            onClick={() => handleOpenProjectFinder(app)}
-          >
-            <img src={app.icon} alt={app.name} className="w-16" />
-            <p>{app.name}</p>
-          </li>
-        ))}
+        {APPS.map((app) =>
+          app.id === LINK_ID ? (
+            <li key={app.id} className={`group app ${app.position}`}>
+              <a href={app.href} target="_blank" rel="noopener noreferrer">
+                <img src={app.icon} alt={app.name} className="w-16" />
+              </a>
+              <p>{app.name}</p>
+            </li>
+          ) : (
+            <li
+              key={app.id}
+              className={`group app ${app.position}`}
+              onClick={() => toggleApp(app)}
+            >
+              <img src={app.icon} alt={app.name} className="w-16" />
+              <p>{app.name}</p>
+            </li>
+          )
+        )}
       </ul>
     </section>
   );

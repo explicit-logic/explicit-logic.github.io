@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Tooltip } from "react-tooltip";
-import { DOCK_APPS, DIVIDER_ID, type DockApp } from "~/constants/dock";
+import { DIVIDER_ID, LINK_ID } from "~/constants/common";
+import { DOCK_APPS, type App } from "~/constants/dock";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useWindowStore } from "~/store/window";
@@ -8,7 +9,7 @@ import { useWindowStore } from "~/store/window";
 export const Dock = () => {
   const { openWindow, closeWindow, windows } = useWindowStore();
   const dockRef = useRef<HTMLDivElement>(null);
-  const toggleApp = (app: DockApp) => {
+  const toggleApp = (app: App) => {
     if (!app.canOpen) return;
 
     const win = windows[app.id];
@@ -79,11 +80,41 @@ export const Dock = () => {
   return (
     <section id="dock">
       <div ref={dockRef} className="dock-container">
-        {DOCK_APPS.map((app) => (
-          <div key={app.id} className="relative flex justify-center">
-            {app.id === DIVIDER_ID ? (
-              <div className="w-px h-12 3xl:h-16 bg-white/30 self-center mx-1" />
-            ) : (
+        {DOCK_APPS.map((app) => {
+          if (app.id === DIVIDER_ID) {
+            return (
+              <div key={app.id} className="relative flex justify-center">
+                <div className="w-px h-12 3xl:h-16 bg-white/30 self-center mx-1" />
+              </div>
+            );
+          }
+
+          if (app.id === LINK_ID) {
+            return (
+              <div key={app.id} className="relative flex justify-center">
+                <a
+                  aria-label={app.name}
+                  data-tooltip-id="dock-tooltip"
+                  data-tooltip-content={app.name}
+                  data-tooltip-delay-show={150}
+                  href={app.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dock-icon"
+                >
+                  <img
+                    src={`/images/${app.icon}`}
+                    alt={app.name}
+                    loading="lazy"
+                    className="w-12"
+                  />
+                </a>
+              </div>
+            );
+          }
+
+          return (
+            <div key={app.id} className="relative flex justify-center">
               <button
                 type="button"
                 className="dock-icon"
@@ -98,14 +129,12 @@ export const Dock = () => {
                   src={`/images/${app.icon}`}
                   alt={app.name}
                   loading="lazy"
-                  className={`${app.canOpen ? "" : "opacity-60"} ${
-                    app.icon.includes("apps") ? "w-12" : "w-16"
-                  }`}
+                  className={app.canOpen ? "" : "opacity-60"}
                 />
               </button>
-            )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
         <Tooltip id="dock-tooltip" place="top" className="tooltip" />
       </div>
     </section>

@@ -1,27 +1,26 @@
-export type DockBlock = DockApp | Divider;
+import { PROJECT_IDS } from "./projects";
+import { LINK_ID } from "./common";
+import { DIVIDER, type Divider } from "./common";
 
-type AppId = typeof DOCK_APP_IDS[keyof typeof DOCK_APP_IDS];
-
-export type DockApp = {
-  id: AppId;
+interface Base {
   name: string;
   icon: string;
-  canOpen: boolean;
-  
+  canOpen?: boolean;
 }
 
-export type Divider = {
-  id: typeof DIVIDER_ID;
-};
+export interface App extends Base {
+  id: typeof DOCK_APP_IDS[keyof typeof DOCK_APP_IDS];
+}
 
-export const DIVIDER_ID = "divider";
+interface Link extends Base {
+  id: typeof LINK_ID;
+  href: string;
+}
+
+export type DockApp = App | Link | Divider;
 
 export const DOCK_APP_IDS = {
-  APPARTMENT: "appartment",
-  LIGHT_PASS: "light_pass",
-  SPOT_SERVE: "spot_serve",
-  WALLPAPER: "wallpaper",
-
+  ...PROJECT_IDS,
 
   CONTACT: "contact",
   FINDER: "finder",
@@ -31,11 +30,7 @@ export const DOCK_APP_IDS = {
   TRASH: "trash",
 } as const;
 
-const DIVIDER: Divider = {
-  id: DIVIDER_ID,
-};
-
-export const DOCK_APPS: DockBlock[] = [
+export const DOCK_APPS: DockApp[] = [
   {
     id: DOCK_APP_IDS.FINDER,
     name: "Portfolio",
@@ -68,8 +63,9 @@ export const DOCK_APPS: DockBlock[] = [
   },
   DIVIDER,
   {
-    id: DOCK_APP_IDS.APPARTMENT,
-    name: "Appartment",
+    id: LINK_ID,
+    href: "https://appartement.icu",
+    name: "Appartement",
     icon: "apps/appartement.png",
     canOpen: true,
   },
@@ -86,7 +82,7 @@ export const DOCK_APPS: DockBlock[] = [
   //   canOpen: true,
   // },
   // {
-  //   id: DOCK_APP_IDS.WALLPAPER,
+  //   id: DOCK_APP_IDS.WALLPAPERS,
   //   name: "Wallpapers",
   //   icon: "apps/wallpapers.png",
   //   canOpen: true,

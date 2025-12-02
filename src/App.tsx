@@ -10,6 +10,7 @@ import { FinderWindow } from "~/windows/Finder";
 import { TextWindow } from "~/windows/Text";
 import { ImageWindow } from "~/windows/Image";
 import { PhotosWindow } from "~/windows/Photos";
+import { WallpapersWindow } from "~/windows/Wallpapers";
 import { Draggable } from "gsap/Draggable";
 import gsap from "gsap";
 
@@ -30,17 +31,18 @@ const App = () => {
       <TextWindow />
       <ImageWindow />
       <PhotosWindow />
+      <WallpapersWindow />
 
       <Home />
 
-      <a
-        href="https://unsplash.com/photos/silhouette-of-mountains-during-nigh-time-photography-v7daTKlZzaw"
+      {/* <a
+        href="https://unsplash.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="absolute bottom-5 right-5 text-white/50 text-xs hover:text-white transition-colors z-0"
       >
-        @Unsplash - Daniel Leone
-      </a>
+        @Unsplash
+      </a> */}
     </main>
   );
 };
