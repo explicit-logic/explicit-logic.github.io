@@ -209,7 +209,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "appartement.icu",
-          icon: "/images/safari.png",
+          icon: "/images/apps/appartement.png",
           kind: "file",
           fileType: "url",
           href: "https://appartement.icu",
@@ -298,7 +298,7 @@ const WORK_LOCATION = {
         {
           id: 3,
           name: "Spot Serve",
-          icon: "/images/safari.png",
+          icon: "/images/apps/spot-serve.png",
           kind: "file",
           fileType: "url",
           href: "https://spot-serve.pages.dev/",
@@ -337,7 +337,7 @@ const WORK_LOCATION = {
         {
           id: 3,
           name: "Wallpapers",
-          icon: "/images/safari.png",
+          icon: "/images/apps/wallpapers.png",
           kind: "file",
           fileType: "url",
           href: "https://explicit-logic.github.io/wallpapers/",
@@ -383,6 +383,24 @@ const ABOUT_LOCATION: Location = {
         "I love exploring unfamiliar cultures, trying new experiences, and finding inspiration in the world around me.",
         "I also enjoy reading books, which helps me unwind, learn, and stay curious."
       ],
+    },
+    {
+      id: 3,
+      name: "project-docs.md",
+      icon: "/images/txt.png",
+      kind: "file",
+      fileType: "md",
+      position: "top-50 left-10",
+      href: "/files/project-docs.md",
+    },
+    {
+      id: 4,
+      name: "dev-notes.md",
+      icon: "/images/txt.png",
+      kind: "file",
+      fileType: "md",
+      position: "top-50 right-20",
+      href: "/files/dev-notes.md",
     },
   ],
 };
@@ -452,6 +470,7 @@ const WINDOW_CONFIG: Record<string, Window>  = {
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  mdfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   wallpapers: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 } as const;
 

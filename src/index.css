@@ -376,6 +376,14 @@ body {
     }
   }
 
+  #mdfile {
+    @apply w-2xl max-h-[80vh] bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+
+    h2 {
+      @apply font-bold text-sm text-center w-full;
+    }
+  }
+
   #wallpapers {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-3xl overflow-hidden;
     width: 390px;
