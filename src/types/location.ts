@@ -9,7 +9,6 @@ export type Location = {
 
 export type LocationChild = {
   id: number;
-  imageUrl?: string;
   fileType?: string;
   href?: string;
   position?: string;

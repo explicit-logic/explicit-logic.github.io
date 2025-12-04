@@ -163,7 +163,9 @@ body {
   }
 
   #terminal {
-    @apply absolute top-32 left-1/12 bg-black text-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply absolute top-32 left-1/12 text-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+
+    background: #262626;
 
     h2 {
       @apply font-bold text-sm text-center w-full;

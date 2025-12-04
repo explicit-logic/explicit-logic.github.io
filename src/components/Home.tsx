@@ -26,9 +26,9 @@ export const Home = () => {
   return (
     <section id="home">
       <ul>
-        {APPS.map((app) =>
+        {APPS.map((app, index) =>
           app.id === LINK_ID ? (
-            <li key={app.id} className={`group app ${app.position}`}>
+            <li key={index} className={`group app ${app.position}`}>
               <a href={app.href} target="_blank" rel="noopener noreferrer">
                 <img src={app.icon} alt={app.name} className="w-16" />
               </a>
@@ -36,7 +36,7 @@ export const Home = () => {
             </li>
           ) : (
             <li
-              key={app.id}
+              key={index}
               className={`group app ${app.position}`}
               onClick={() => toggleApp(app)}
             >

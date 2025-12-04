@@ -43,7 +43,7 @@ const Photos = () => {
                     icon: "images/image.png",
                     kind: "file",
                     fileType: "image",
-                    imageUrl: img.img,
+                    href: img.img,
                   })
                 }
               >

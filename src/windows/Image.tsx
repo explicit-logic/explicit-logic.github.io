@@ -4,7 +4,7 @@ import { useWindowStore } from "~/store/window";
 
 interface ImageFileData {
   name: string;
-  imageUrl: string;
+  href: string;
 }
 
 const Image = () => {
@@ -21,7 +21,7 @@ const Image = () => {
       </div>
 
       <div className="preview flex-1 overflow-hidden">
-        <img src={data.imageUrl} alt={data.name} />
+        <img src={data.href} alt={data.name} />
       </div>
     </div>
   );

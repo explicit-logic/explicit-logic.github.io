@@ -80,10 +80,10 @@ export const Dock = () => {
   return (
     <section id="dock">
       <div ref={dockRef} className="dock-container">
-        {DOCK_APPS.map((app) => {
+        {DOCK_APPS.map((app, index) => {
           if (app.id === DIVIDER_ID) {
             return (
-              <div key={app.id} className="relative flex justify-center">
+              <div key={index} className="relative flex justify-center">
                 <div className="w-px h-12 3xl:h-16 bg-white/30 self-center mx-1" />
               </div>
             );
@@ -91,7 +91,7 @@ export const Dock = () => {
 
           if (app.id === LINK_ID) {
             return (
-              <div key={app.id} className="relative flex justify-center">
+              <div key={index} className="relative flex justify-center">
                 <a
                   aria-label={app.name}
                   data-tooltip-id="dock-tooltip"
@@ -114,7 +114,7 @@ export const Dock = () => {
           }
 
           return (
-            <div key={app.id} className="relative flex justify-center">
+            <div key={index} className="relative flex justify-center">
               <button
                 type="button"
                 className="dock-icon"
