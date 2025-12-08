@@ -144,7 +144,7 @@ body {
         }
 
         .content {
-          @apply col-span-10 space-y-3;
+          @apply col-span-8 space-y-3;
 
           p {
             @apply text-xs text-gray-500;

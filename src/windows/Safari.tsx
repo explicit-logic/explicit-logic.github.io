@@ -11,7 +11,7 @@ import {
   Plus,
   Copy,
 } from "lucide-react";
-import { blogPosts } from "~/constants";
+import { posts } from "~/constants/posts";
 
 const Safari = () => {
   return (
@@ -46,11 +46,11 @@ const Safari = () => {
       </div>
 
       <div className="blog">
-        <h2>My Developer Blog</h2>
+        <h2>My Blog</h2>
         <div className="space-y-8">
-          {blogPosts.map((post) => (
+          {posts.map((post) => (
             <div key={post.id} className="blog-post">
-              <div className="col-span-2">
+              <div className="col-span-4">
                 <img src={post.image} alt={post.title} />
               </div>
 
