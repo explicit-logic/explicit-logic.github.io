@@ -40,6 +40,15 @@ const WORK_LOCATION = {
           position: "top-10 right-20",
         },
         {
+          id: 3,
+          name: "snippets.md",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "md",
+          href: "/projects/appartement/snippets.md",
+          position: "top-60 right-30",
+        },
+        {
           id: 4,
           name: "appartement.png",
           icon: "/images/image.png",

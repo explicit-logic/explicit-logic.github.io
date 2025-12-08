@@ -88,22 +88,25 @@ const Markdown = () => {
               remarkPlugins={[remarkGfm]}
               components={{
                 h1: ({ ...props }) => (
-                  <h1 className="text-3xl font-bold mt-6 mb-4" {...props} />
+                  <h1 className="text-3xl font-semibold mt-6 mb-4" {...props} />
                 ),
                 h2: ({ ...props }) => (
-                  <h2 className="text-2xl font-bold mt-5 mb-3" {...props} />
+                  <h2 className="text-2xl font-semibold mt-5 mb-3" {...props} />
                 ),
                 h3: ({ ...props }) => (
-                  <h3 className="text-xl font-bold mt-4 mb-2" {...props} />
+                  <h3 className="text-xl font-semibold mt-4 mb-2" {...props} />
                 ),
                 h4: ({ ...props }) => (
-                  <h4 className="text-lg font-bold mt-3 mb-2" {...props} />
+                  <h4 className="text-lg font-semibold mt-3 mb-2" {...props} />
                 ),
                 h5: ({ ...props }) => (
-                  <h5 className="text-base font-bold mt-2 mb-1" {...props} />
+                  <h5
+                    className="text-base font-semibold mt-2 mb-1"
+                    {...props}
+                  />
                 ),
                 h6: ({ ...props }) => (
-                  <h6 className="text-sm font-bold mt-2 mb-1" {...props} />
+                  <h6 className="text-sm font-semibold mt-2 mb-1" {...props} />
                 ),
                 p: ({ ...props }) => (
                   <p className="mb-4 leading-7" {...props} />

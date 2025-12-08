@@ -94,14 +94,6 @@ Files are organized into locations:
 - **Resume** - CV and professional documents
 - **Trash** - Deleted items
 
-## Future Ideas
-
-- [ ] Support for PDF preview
-- [ ] Video file support
-- [ ] Music player window
-- [ ] Calendar integration
-- [ ] Notes app
-
 ---
 
 _Last updated: December 3, 2025_
