@@ -15,7 +15,7 @@ const FONT_WEIGHTS = {
   },
 } as const;
 
-const renderText = (text: string, className: string, baseWeight = 400) => {
+const renderText = (text: string, className: string, baseWeight = 100) => {
   return [...text].map((char, index) => (
     <span
       key={index}
