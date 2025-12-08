@@ -339,14 +339,22 @@ body {
       @apply flex-1 p-8 bg-white max-w-2xl relative;
 
       li {
-        @apply absolute flex items-center flex-col gap-3;
+        @apply absolute flex items-center flex-col gap-3 border border-transparent rounded-md p-2;
+
+        &.selected {
+          @apply bg-black/10 border-black/5;
+
+          img {
+            @apply brightness-90;
+          }
+        }
 
         img {
-          @apply object-contain object-center size-16 relative group-hover:scale-105;
+          @apply object-contain object-center size-16 relative group-hover:scale-105 transition-transform;
         }
 
         p {
-          @apply text-sm text-center font-medium w-40;
+          @apply text-sm text-center font-medium max-w-40 truncate px-1 rounded transition-colors;
         }
       }
     }

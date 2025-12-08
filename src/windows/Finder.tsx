@@ -1,4 +1,5 @@
 import { WindowHeader } from "~/components/WindowHeader";
+import { useState } from "react";
 import { Search } from "lucide-react";
 import { WindowWrapper } from "~/hoc/WindowWrapper";
 import { locations } from "~/constants/locations";
@@ -9,10 +10,16 @@ import { useWindowStore } from "~/store/window";
 export const Finder = () => {
   const { activeLocation, setActiveLocation } = useLocationStore();
   const { openWindow } = useWindowStore();
+  const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
+
+  const handleNavigate = (location: Location | LocationChild) => {
+    setActiveLocation(location);
+    setSelectedItemId(null);
+  };
 
   const openItem = (item: LocationChild) => {
     if (item.fileType === "pdf") return openWindow("resume");
-    if (item.kind === "folder") return setActiveLocation(item);
+    if (item.kind === "folder") return handleNavigate(item);
     if (["fig", "url"].includes(item?.fileType ?? "") && item?.href)
       return window.open(item.href, "_blank");
 
@@ -26,7 +33,7 @@ export const Finder = () => {
         {items.map((item) => (
           <li
             key={item.id}
-            onClick={() => setActiveLocation(item)}
+            onClick={() => handleNavigate(item)}
             className={item.id === activeLocation.id ? "active" : "not-active"}
           >
             <img src={item.icon} alt={item.name} className="w-4" />
@@ -48,12 +55,18 @@ export const Finder = () => {
           {renderList("Favorites", Object.values(locations))}
           {renderList("Work", locations.work.children)}
         </div>
-        <ul className="content">
+        <ul className="content" onClick={() => setSelectedItemId(null)}>
           {activeLocation.children?.map((item) => (
             <li
               key={item.id}
-              onClick={() => openItem(item)}
-              className={item.position}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedItemId(item.id);
+                openItem(item);
+              }}
+              className={`${item.position} ${
+                item.id === selectedItemId ? "selected" : ""
+              }`}
             >
               <img src={item.icon} alt={item.name} />
               <p>{item.name}</p>
