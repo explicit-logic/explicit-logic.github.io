@@ -1,14 +1,13 @@
 import { WindowWrapper } from "~/hoc/WindowWrapper";
 import { socials } from "~/constants";
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 
 export const Contact = () => {
   return (
     <>
-      <div id="window-header">
-        <WindowControls target="contact" />
+      <WindowHeader target="contact">
         <h2>Contact Me</h2>
-      </div>
+      </WindowHeader>
 
       <div className="p-5 space-y-5">
         <img

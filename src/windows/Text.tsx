@@ -1,5 +1,5 @@
 import { WindowWrapper } from "~/hoc/WindowWrapper";
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 import { useWindowStore } from "~/store/window";
 
 interface TextFileData {
@@ -17,10 +17,9 @@ const Text = () => {
 
   return (
     <div className="flex h-full w-full flex-col bg-white text-black">
-      <div id="window-header">
-        <WindowControls target="txtfile" />
+      <WindowHeader target="txtfile">
         <h2>{data.name}</h2>
-      </div>
+      </WindowHeader>
 
       <div className="flex-1 overflow-y-auto px-4 pb-4">
         <div className="mx-auto max-w-2xl space-y-2">

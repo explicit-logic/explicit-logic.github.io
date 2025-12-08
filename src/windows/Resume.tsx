@@ -1,5 +1,5 @@
 import { WindowWrapper } from "~/hoc/WindowWrapper";
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 import { Download } from "lucide-react";
 import { Document, Page, pdfjs } from "react-pdf";
 
@@ -13,8 +13,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 const Resume = () => {
   return (
     <>
-      <div id="window-header">
-        <WindowControls target="resume" />
+      <WindowHeader target="resume">
         <h2>Resume.pdf</h2>
 
         <a
@@ -25,7 +24,7 @@ const Resume = () => {
         >
           <Download className="icon" />
         </a>
-      </div>
+      </WindowHeader>
 
       <Document file="files/bohdan_andrianov_resume.pdf">
         <Page pageNumber={1} renderTextLayer renderAnnotationLayer />

@@ -1,5 +1,5 @@
 import { WindowWrapper } from "~/hoc/WindowWrapper";
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 import { useWindowStore } from "~/store/window";
 
 interface ImageFileData {
@@ -15,10 +15,9 @@ const Image = () => {
 
   return (
     <div className="flex h-full w-full flex-col bg-white text-black">
-      <div id="window-header">
-        <WindowControls target="imgfile" />
+      <WindowHeader target="imgfile">
         <p className="w-full text-center">{data.name}</p>
-      </div>
+      </WindowHeader>
 
       <div className="preview flex-1 overflow-hidden">
         <img src={data.href} alt={data.name} />

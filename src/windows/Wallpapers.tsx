@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Share, Copy, Check } from "lucide-react";
 import { WindowWrapper } from "~/hoc/WindowWrapper";
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 import { Modal } from "~/components/Modal";
 
 const Wallpapers = () => {
@@ -21,8 +21,7 @@ const Wallpapers = () => {
 
   return (
     <div className="flex h-full w-full flex-col bg-white text-black">
-      <div id="window-header">
-        <WindowControls target="wallpapers" />
+      <WindowHeader target="wallpapers">
         <p className="w-full text-center">Wallpapers</p>
 
         {/* Share Button */}
@@ -34,7 +33,7 @@ const Wallpapers = () => {
         >
           <Share className="w-4 h-4 text-gray-600" />
         </button>
-      </div>
+      </WindowHeader>
 
       <div className="flex-1 overflow-hidden">
         <iframe

@@ -1,5 +1,5 @@
 import { WindowWrapper } from "~/hoc/WindowWrapper";
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 import { useWindowStore } from "~/store/window";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -64,10 +64,9 @@ const Markdown = () => {
       id="mdfile"
       className="flex h-full w-full flex-col bg-white text-black"
     >
-      <div id="window-header">
-        <WindowControls target="mdfile" />
+      <WindowHeader target="mdfile">
         <h2>{data.name}</h2>
-      </div>
+      </WindowHeader>
 
       <div className="flex-1 overflow-y-auto px-6 py-4">
         {loading && (

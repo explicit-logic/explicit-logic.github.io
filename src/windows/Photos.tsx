@@ -1,5 +1,5 @@
 import { WindowWrapper } from "~/hoc/WindowWrapper";
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 import { Mail, Search } from "lucide-react";
 import { photosLinks, gallery } from "~/constants";
 import { useWindowStore } from "~/store/window";
@@ -9,14 +9,12 @@ const Photos = () => {
 
   return (
     <>
-      <div id="window-header">
-        <WindowControls target="photos" />
-
+      <WindowHeader target="photos">
         <div className="w-full flex justify-end items-center gap-3 text-gray-500">
           <Mail className="icon" />
           <Search className="icon" />
         </div>
-      </div>
+      </WindowHeader>
 
       <div className="flex w-full">
         <div className="sidebar">

@@ -1,4 +1,4 @@
-import { WindowControls } from "~/components/WindowControls";
+import { WindowHeader } from "~/components/WindowHeader";
 import { Search } from "lucide-react";
 import { WindowWrapper } from "~/hoc/WindowWrapper";
 import { locations } from "~/constants/locations";
@@ -39,10 +39,9 @@ export const Finder = () => {
 
   return (
     <>
-      <div id="window-header">
-        <WindowControls target="finder" />
+      <WindowHeader target="finder">
         <Search className="icon" />
-      </div>
+      </WindowHeader>
 
       <div className="bg-white flex h-full">
         <div className="sidebar">
