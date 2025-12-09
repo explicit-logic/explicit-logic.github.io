@@ -408,6 +408,20 @@ body {
     }
   }
 
+  #shorts {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black shadow-2xl drop-shadow-2xl rounded-3xl overflow-hidden;
+    width: 390px;
+    height: 800px;
+    
+    .window-header {
+      @apply grid grid-cols-[auto_1fr_auto] items-center bg-zinc-900 border-zinc-800 text-gray-400;
+        
+      p {
+        @apply font-bold text-gray-200 text-center;
+      }
+    }
+  }
+
   /* Modal animations */
   @keyframes fade-in {
     from {

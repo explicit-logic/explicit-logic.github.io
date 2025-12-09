@@ -23,6 +23,9 @@ export const Finder = () => {
     if (["fig", "url"].includes(item?.fileType ?? "") && item?.href)
       return window.open(item.href, "_blank");
 
+    if (item.fileType === "video") return openWindow("shorts", item);
+    if (item.fileType === "wallpapers") return openWindow("wallpapers", item);
+
     openWindow(`${item.fileType}${item.kind}`, item);
   };
 

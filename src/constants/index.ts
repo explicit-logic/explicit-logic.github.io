@@ -155,6 +155,7 @@ const WINDOW_CONFIG: Record<string, Window>  = {
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   mdfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   wallpapers: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  shorts: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 } as const;
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

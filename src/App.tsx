@@ -12,6 +12,7 @@ import { ImageWindow } from "~/windows/Image";
 import { MarkdownWindow } from "~/windows/Markdown";
 import { PhotosWindow } from "~/windows/Photos";
 import { WallpapersWindow } from "~/windows/Wallpapers";
+import { ShortsWindow } from "~/windows/Shorts";
 import { Draggable } from "gsap/Draggable";
 import gsap from "gsap";
 
@@ -34,6 +35,7 @@ const App = () => {
       <MarkdownWindow />
       <PhotosWindow />
       <WallpapersWindow />
+      <ShortsWindow />
 
       <Home />
 
