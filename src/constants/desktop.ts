@@ -45,4 +45,10 @@ export const APPS: App[] = [
     icon: "/images/apps/spot-serve.png",
     position: "top-[60vh] left-7",
   },
+  {
+    id: "resume",
+    name: "Resume.pdf",
+    icon: "/images/pdf.png",
+    position: "top-20 right-20",
+  },
 ];
