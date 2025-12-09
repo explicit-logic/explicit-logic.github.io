@@ -2,13 +2,6 @@
 
 Welcome to the **macOS Portfolio** project! This is a modern, interactive portfolio built with React and TypeScript.
 
-## Features
-
-- 🖥️ **macOS-inspired UI** - Authentic macOS design with windows, dock, and finder
-- 📁 **File System** - Browse projects and files just like in macOS Finder
-- 🎨 **Beautiful Design** - Clean, modern interface with smooth animations
-- 📱 **Responsive** - Works great on all devices
-
 ## Tech Stack
 
 The project uses cutting-edge technologies:
@@ -59,13 +52,9 @@ src/
 ### Features
 
 - Drag and drop windows
-- Window management (minimize, maximize, close)
+- Window management
 - Dock with app shortcuts
 - Dynamic content loading
-
-## Contributing
-
-Feel free to explore the code and suggest improvements!
 
 > **Note**: This is a portfolio project showcasing web development skills and macOS UI design.
 
