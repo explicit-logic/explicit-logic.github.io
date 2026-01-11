@@ -102,15 +102,19 @@ body {
     @apply flex gap-2;
 
     .close {
-      @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
+      @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer flex-center;
     }
 
     .minimize {
-      @apply size-3.5 rounded-full bg-[#ffc030];
+      @apply size-3.5 rounded-full bg-[#ffc030] flex-center;
     }
 
     .maximize {
-      @apply size-3.5 rounded-full bg-[#2acb42];
+      @apply size-3.5 rounded-full bg-[#2acb42] flex-center;
+    }
+
+    .control-icon {
+      @apply size-2 text-black/70 stroke-[4];
     }
   }
 
